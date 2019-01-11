@@ -25,7 +25,9 @@ class Event < ApplicationRecord
     if end_at.present? && end_at < start_at
       errors.add(:end_at, "End time must be after start time")
     end
-  end  
+  end
+  
+
 
 #  validates_numericality_of :end_at, less_than: ->(t) { t.start_at + 3.hours }, :allow_blank => true, message: " date can't be more than 3 hours after Event start time"
 
