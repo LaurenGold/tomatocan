@@ -1,0 +1,7 @@
+Friday:
+-went through some Michael Harti tutorial
+-learned how to push/pull
+-started to write test cases
+
+For next week:
+-write proper test cases
