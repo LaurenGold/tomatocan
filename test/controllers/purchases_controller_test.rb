@@ -11,6 +11,12 @@ class PurchasesControllerTest < ActionController::TestCase
       get :new, params: { merchandise_id: @merchandises.id }
       assert_response :success
     end
+    
+    # test "redirectIfsuccess" do
+    #   sign_in users(:one)
+    #   post :create, params: { author_id: '12', pricesold: '9', authorcut: '2' } 
+    #   assert_redirected_to merchandises_path(@merchandises.id)
+    # end
 
     test "should_get_purchases_new_donate" do
       sign_in users(:one)

@@ -1,7 +1,23 @@
-Friday:
+1/11/2019:
 -went through some Michael Harti tutorial
 -learned how to push/pull
 -started to write test cases
 
 For next week:
 -write proper test cases
+
+1/12/2019
+fixed the invalid email error -uncommented redirect to events path
+deleted all view functions from vrsvpqs test controller
+
+For next week: 
+- go through history and fix tests in users controller test
+
+1/25
+-got stripe connected
+-tried purchases test
+
+for next week:
+-study examples of working tests
+-continue purchases tests: was working on a redirect and a create for the purchase
+-write more tests for purchases

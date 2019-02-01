@@ -26,8 +26,10 @@ class RsvpqsController < ApplicationController
     end
 
     if @rsvp.save
+      puts "hiiiiiiiii"
       redirect_to home_path notice: 'Rsvp was successfully created.'
     else
+      puts "oooooooooo"
       flash[:notice] = 'Please enter a valid email address'
       redirect_back(fallback_location: root_path)
     end
