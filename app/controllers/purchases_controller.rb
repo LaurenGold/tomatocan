@@ -26,6 +26,7 @@ class PurchasesController < ApplicationController
       if current_user.stripe_customer_token.present?
         customer = Stripe::Customer.retrieve(current_user.stripe_customer_token)
         sourceid = customer.default_source
+        @card = customer.sources.retrieve(sourceid)
         card = customer.sources.retrieve(sourceid)
         @last4 = card.last4
         @expmonth = card.exp_month

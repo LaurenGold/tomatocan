@@ -65,10 +65,26 @@
           <div class="last4">
             You are using default card ending *<%= @last4 %>, Expiration <%= @expmonth %>-<%= @expyear %><br>
           </div>
+           
+          <% if Stripe.card > Date.today %>
+          
+          <div class="cardinfo" >
+              <%= label_tag :card_number, "Credit Card Number" %>
+              <%= text_field_tag :card_number, nil, name: nil %><br><br>
+  
+              <%= label_tag :card_code, "Security Code on Card (CVV)" %>
+              <%= text_field_tag :card_code, nil, name: nil %><br><br>
+
+              <%= label_tag :card_month, "Card Expiration" %>
+              <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
+              <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+5}, {name: nil, id: "card_year"} %> <br><br>
+            </div>
+            <%end%>
           <div class="buyexistingcard" onclick="return existingcard();">
           <%if(params[:merchandise_id].present?)%>
             <% merch = Merchandise.find(params[:merchandise_id]) %>
             $<%= merch.price %>0
+
             <%= f.submit "Buy now" %>
           <%else%>
             <%= f.submit "Donate now" %>
@@ -89,7 +105,7 @@
 
             <%= label_tag :card_month, "Card Expiration" %>
             <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
-            <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+5}, {name: nil, id: "card_year"} %> <br><br>
+            <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+5}, {name: nil, id: "card_year"} %><br><br>
           </p>
           <%if(params[:merchandise_id].present?)%>
               <%= f.submit "Purchase" %><br><br>

@@ -33,7 +33,7 @@ class PurchasesControllerTest < ActionController::TestCase
 
     test "should_create_new_purchase" do
       sign_in user(:one)
-      get :create, 
+      #get :create, 
     end  
     
 end
